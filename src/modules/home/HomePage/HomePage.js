@@ -1,7 +1,14 @@
 import React from 'react';
-import {stylesDefault} from './styles'
+import axios from 'axios';
+import { stylesDefault } from './styles'
 import Map from 'pigeon-maps';
 import Marker from 'pigeon-marker';
+
+import Popup from '../RegisterOlla/RegisterOlla';
+import MarkerInfo from '../MarkerInfo/MarkerInfo';
+const registerMessage = "¿Quieres registrar una olla común?";
+
+
 
 export default class HomePage extends React.Component {
   state = {
@@ -9,27 +16,75 @@ export default class HomePage extends React.Component {
       lat: -17.783259,
       lng: -63.182214,
     },
-    position: {
-      lat: -17.782309,
-      lng: -63.185393,
-    },
-    zoom: 15,
+    zoom: 14,
+    height: 0,
+    places: [],
+    markerPressed: null,
   };
 
+  componentDidMount() {
+    axios.get('https://192.168.0.2:8000/')
+      .then(res => {
+        const places = res.data;
+        this.setState({ places });
+      }).catch(error => {
+        console.log(error);
+      })
+  }
+
+  onMarkerPressed = ({ event, anchor, payload }) => {
+    this.setState({
+      markerPressed: payload
+    })
+  }
+  onCloseMarkerPressed= () =>{
+    this.setState({
+      markerPressed: null
+    })
+  }
   render() {
     const center = [this.state.center.lat, this.state.center.lng];
-    const position = [this.state.position.lat, this.state.position.lng];
     return (
       <div style={stylesDefault.container}>
         <Map
           center={center}
           zoom={this.state.zoom}
-          height={500}
+          height={800}
         >
-          <Marker anchor={position} payload={1} onClick={({event, anchor, payload}) => {
-          }}/>
+          {
+            this.state.places.map(
+              place => {
+
+                return (<Marker 
+                key={place.id}
+                anchor={[parseFloat(place.latitude), parseFloat(place.longitude)]} 
+
+                payload={place} 
+
+                onClick={this.onMarkerPressed} />)
+              }
+            )
+          }
         </Map>
+
+        {this.props.showRegisterOlla ?
+          <Popup
+            text={registerMessage}
+            closePopup={this.props.togglePopup}
+          />
+          : null
+        }
+
+        {this.state.markerPressed ?
+          <MarkerInfo
+            title={this.state.markerPressed.name}
+            description={this.state.markerPressed.description}
+            closePopup={this.onCloseMarkerPressed}
+          />
+          : null
+        }
       </div>
+
     );
   }
 }
