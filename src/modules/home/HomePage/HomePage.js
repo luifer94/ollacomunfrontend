@@ -21,6 +21,7 @@ export default class HomePage extends React.Component {
   };
 
   componentDidMount() {
+    console.log(process.env.API_URL);
     axios
       .get(`http://${process.env.API_URL}/`)
       .then(res => {
