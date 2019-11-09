@@ -14,7 +14,7 @@ class RegisterOlla extends React.Component {
 
                     <Modal.Body>
                         <h4 style={stylesDefault.test}>
-                            Envia un mensaje de whatsapp al número: +591 77777 con los siguientes puntos:
+                            Envia un mensaje a nuestra pagina en Facebook(Olla común Bolivia): https://bit.ly/2CqMdMw
                     </h4>
                         <ol>
                             <li>
@@ -24,7 +24,7 @@ class RegisterOlla extends React.Component {
                                 Nombre de la persona o organización. (OBLIGATORIO)
                         </li>
                             <li>
-                                Coordenadas de la olla común (OBLIGATORIO)
+                                Ubicación GPS (OBLIGATORIO)
                         </li>
                             <li>
                                 Descripción extra. (OPCIONAL)
