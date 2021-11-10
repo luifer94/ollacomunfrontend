@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { stylesDefault } from "./styles";
-import Map from "pigeon-maps";
-import Marker from "pigeon-marker";
+import { Map, Marker } from "pigeon-maps"
 
 import Popup from "../RegisterOlla/RegisterOlla";
 import MarkerInfo from "../MarkerInfo/MarkerInfo";
@@ -46,7 +45,7 @@ export default class HomePage extends React.Component {
     const center = [this.state.center.lat, this.state.center.lng];
     return (
       <div style={stylesDefault.container}>
-        <Map center={center} zoom={this.state.zoom} height={800}>
+        <Map  center={center} zoom={this.state.zoom} height={800}>
           {this.state.places.map(place => {
             return (
               <Marker
