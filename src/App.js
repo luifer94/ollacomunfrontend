@@ -29,7 +29,7 @@ export default class App extends React.Component {
   };
 
   render() {
-    return (8
+    return (
       <Router>
         <div>
           <Navbar bg="light" variant="light" style={{ color: "green" }}>
