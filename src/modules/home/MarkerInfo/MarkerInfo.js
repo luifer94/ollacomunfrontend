@@ -13,7 +13,7 @@ class MarkerInfo extends React.Component {
                     </Modal.Header>
 
                     <Modal.Body>
-                        <p>{this.props.description}</p>
+                        <p style={{whiteSpace: "pre-wrap" }}>{this.props.description}</p>
                     </Modal.Body>
 
                 </Modal.Dialog>

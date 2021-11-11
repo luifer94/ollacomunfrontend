@@ -49,6 +49,7 @@ export default class HomePage extends React.Component {
           {this.state.places.map(place => {
             return (
               <Marker
+                width={60}
                 key={place.id}
                 anchor={[
                   parseFloat(place.latitude),

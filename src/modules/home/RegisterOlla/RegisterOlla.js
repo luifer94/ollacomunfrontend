@@ -14,8 +14,8 @@ class RegisterOlla extends React.Component {
 
                     <Modal.Body>
                         <h4 style={stylesDefault.test}>
-                            Envia un mensaje a nuestra pagina en Facebook(Olla común Bolivia): https://bit.ly/2CqMdMw
-                    </h4>
+                            Envia un mensaje a nuestra pagina en <a href="https://bit.ly/2CqMdMw">Facebook(Olla común Bolivia)</a>
+                        </h4>
                         <ol>
                             <li>
                                 Fotografías de carnet de identidad: Anverso y Reverso. (OBLIGATORIO)
