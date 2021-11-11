@@ -29,7 +29,7 @@ export default class App extends React.Component {
   };
 
   render() {
-    return (
+    return (8
       <Router>
         <div>
           <Navbar bg="light" variant="light" style={{ color: "green" }}>
@@ -37,7 +37,7 @@ export default class App extends React.Component {
               <Navbar.Brand>
                 <Link style={{ color: "green" }} to={"/"}>
                   {" "}
-                  ¡La unión hace la fuerza!{" "}
+                  ¡Apoyemos a nuestra gente!{" "}
                 </Link>
               </Navbar.Brand>
               <Nav className="mr-auto"></Nav>
