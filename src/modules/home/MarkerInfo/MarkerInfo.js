@@ -7,7 +7,7 @@ class MarkerInfo extends React.Component {
   render() {
     function NewlineText(props) {
       const text = props.text.toString()+ "";
-      const newText = text.split("\\n").map((str,index) => <p key={index.toString()}>{str}</p>);
+      const newText = text.split("\r\n").map((str,index) => <p key={index.toString()}>{str}</p>);
       return newText;
     }
 
