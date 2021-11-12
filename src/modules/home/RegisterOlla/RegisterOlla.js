@@ -14,7 +14,7 @@ class RegisterOlla extends React.Component {
 
                     <Modal.Body>
                         <h4 style={stylesDefault.test}>
-                            Envia un mensaje a nuestra pagina en <a href="https://bit.ly/2CqMdMw">Facebook(Olla común Bolivia)</a>
+                            Registra tu olla pulsando el sgte: <a rel="noopener" target="_blank" href="https://forms.gle/VDVHQZUvZATs7x3U7">LINK</a>
                         </h4>
                         <ol>
                             <li>

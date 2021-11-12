@@ -44,11 +44,11 @@ export default class App extends React.Component {
               <Button
                 variant="outline-primary"
                 style={{ color: "green", borderColor: "green" }}
-                onClick={this.togglePopup}
                 showRegisterOlla={this.state.showRegisterOlla}
               >
                 {" "}
-                Registrar olla común
+                <a style={{ color: "green", }} rel="noopener" target="_blank" href="https://forms.gle/UEj6wzzfGeEciFVu8">Registrar olla común</a>
+                
               </Button>
             </Container>
           </Navbar>
