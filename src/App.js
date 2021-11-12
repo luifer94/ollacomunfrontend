@@ -49,7 +49,7 @@ export default class App extends React.Component {
                 showRegisterOlla={this.state.showRegisterOlla}
               >
                 {" "}
-                <a style={{ color: "green", }} rel="noopener" target="_blank" href="https://forms.gle/UEj6wzzfGeEciFVu8">Registrar olla común</a>
+                <a style={{ color: "green", }} rel="noopener" target="_blank" href="https://forms.gle/Qj1m4XVAL37winH99">Registrar olla común</a>
                 
               </Button>
             </Container>
