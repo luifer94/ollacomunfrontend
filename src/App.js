@@ -1,3 +1,4 @@
+import './App.css';
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./modules/home/HomePage";
@@ -44,6 +45,7 @@ export default class App extends React.Component {
               <Button
                 variant="outline-primary"
                 style={{ color: "green", borderColor: "green" }}
+                className="btn-hover"
                 showRegisterOlla={this.state.showRegisterOlla}
               >
                 {" "}
