@@ -67,6 +67,7 @@ export default class HomePage extends React.Component {
             description={this.state.markerPressed.description}
             latitude={this.state.markerPressed.latitude}
             longitude={this.state.markerPressed.longitude}
+            images={this.state.markerPressed.images}
             closePopup={this.onCloseMarkerPressed}
           />
         ) : null}

@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from 'react-bootstrap/Button'
+import Carousel from "react-bootstrap/Carousel";
 
 import { stylesDefault } from "./styles";
 
@@ -29,6 +30,19 @@ class MarkerInfo extends React.Component {
 
           <Modal.Body>
             {<NewlineText text={this.props.description} />}
+            { this.props.images && (
+              <Carousel>
+                {this.props.images.map((image) => 
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100"
+                      src={this.getDrivePhotoLink(image)}
+                      alt="First slide"
+                    />
+                  </Carousel.Item>
+                )}
+              </Carousel>
+            ) }
           </Modal.Body>
           <Modal.Footer>
             <Button href={this.getMapsLink(this.props.latitude, this.props.longitude)} variant="success">Ir a google maps</Button>
