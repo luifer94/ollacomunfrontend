@@ -32,8 +32,8 @@ class MarkerInfo extends React.Component {
             {<NewlineText text={this.props.description} />}
             { this.props.images && (
               <Carousel>
-                {this.props.images.map((image) => 
-                  <Carousel.Item>
+                {this.props.images.map((image, index) => 
+                  <Carousel.Item key={index}>
                     <img
                       className="d-block w-100"
                       src={this.getDrivePhotoLink(image)}
