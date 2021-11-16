@@ -11,7 +11,7 @@ class MarkerInfo extends React.Component {
   }
 
   getDrivePhotoLink(photoId) {
-    return `https://drive.google.com/thumbnail?id=${photoId}`;
+    return `https://drive.google.com/uc?export=view&id=${photoId}`;
   } 
 
   render() {
