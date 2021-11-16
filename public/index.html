@@ -29,13 +29,17 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2NYQLLWSR"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      if('%NODE_ENV%' !== 'development') {
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-      gtag('config', 'G-L2NYQLLWSR');
+        gtag('config', 'G-L2NYQLLWSR');
+        
+      }
     </script>
-    
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
