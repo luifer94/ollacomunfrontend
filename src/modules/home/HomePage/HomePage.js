@@ -1,20 +1,14 @@
 import React from "react";
 import axios from "axios";
-import { stylesDefault } from "./styles";
 import { Map, Marker } from "pigeon-maps"
 
 import Popup from "../RegisterOlla/RegisterOlla";
 import MarkerInfo from "../MarkerInfo/MarkerInfo";
-const registerMessage = "¿Quieres registrar una olla común?";
+import { MAP_CENTER, MAP_ZOOM, MAP_HEIGHT, POPUP_MESSAGE } from "./constants";
+import { stylesDefault } from "./styles";
 
 export default class HomePage extends React.Component {
   state = {
-    center: {
-      lat: -17.783259,
-      lng: -63.182214
-    },
-    zoom: 14,
-    height: 0,
     places: [],
     markerPressed: null
   };
@@ -36,16 +30,17 @@ export default class HomePage extends React.Component {
       markerPressed: payload
     });
   };
+
   onCloseMarkerPressed = () => {
     this.setState({
       markerPressed: null
     });
   };
+
   render() {
-    const center = [this.state.center.lat, this.state.center.lng];
     return (
       <div style={stylesDefault.container}>
-        <Map  center={center} zoom={this.state.zoom} height={800}>
+        <Map  center={MAP_CENTER} zoom={MAP_ZOOM} height={MAP_HEIGHT}>
           {this.state.places.map(place => {
             return (
               <Marker
@@ -63,13 +58,16 @@ export default class HomePage extends React.Component {
         </Map>
 
         {this.props.showRegisterOlla ? (
-          <Popup text={registerMessage} closePopup={this.props.togglePopup} />
+          <Popup text={POPUP_MESSAGE} closePopup={this.props.togglePopup} />
         ) : null}
 
         {this.state.markerPressed ? (
           <MarkerInfo
             title={this.state.markerPressed.name}
             description={this.state.markerPressed.description}
+            latitude={this.state.markerPressed.latitude}
+            longitude={this.state.markerPressed.longitude}
+            images={this.state.markerPressed.images}
             closePopup={this.onCloseMarkerPressed}
           />
         ) : null}
