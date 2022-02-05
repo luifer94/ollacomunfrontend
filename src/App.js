@@ -1,6 +1,6 @@
-import './App.css';
+import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HomePage from "./modules/home/HomePage";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -31,35 +31,37 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Router>
-        <div>
-          <Navbar bg="light" variant="light" style={{ color: "green" }}>
-            <Container>
-              <Navbar.Brand>
-                <Link style={{ color: "green" }} to={"/"}>
-                  {" "}
-                  ¡Apoyemos a nuestra gente!{" "}
-                </Link>
-              </Navbar.Brand>
-              <Nav className="mr-auto"></Nav>
-              <Button
-                variant="outline-primary"
-                style={{ color: "green", borderColor: "green" }}
-                className="btn-hover"
-                showRegisterOlla={this.state.showRegisterOlla}
-              >
+      <div>
+        <Navbar bg="light" variant="light" style={{ color: "green" }}>
+          <Container>
+            <Navbar.Brand>
+              <Link style={{ color: "green" }} to={"/"}>
                 {" "}
-                <a style={{ color: "green", }} rel="noopener" target="_blank" href="https://forms.gle/Qj1m4XVAL37winH99">Registrar olla común</a>
-                
-              </Button>
-            </Container>
-          </Navbar>
+                ¡Apoyemos a nuestra gente!{" "}
+              </Link>
+            </Navbar.Brand>
+            <Nav className="mr-auto"></Nav>
+            <Button
+              variant="outline-primary"
+              style={{ color: "green", borderColor: "green" }}
+              className="btn-hover"
+              showRegisterOlla={this.state.showRegisterOlla}
+            >
+              {" "}
+              <a
+                style={{ color: "green" }}
+                rel="noopener"
+                target="_blank"
+                href="https://forms.gle/Qj1m4XVAL37winH99"
+              >
+                Registrar olla común
+              </a>
+            </Button>
+          </Container>
+        </Navbar>
 
-          <Switch>
-            <Route path="/" render={this.renderHomePage} />
-          </Switch>
-        </div>
-      </Router>
+        {this.renderHomePage()}
+      </div>
     );
   }
 }
