@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import App from "./App";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
+
 const RoutedApp = () => {
+    
+    return (
     <Router>
         <Routes>
-            <Route path="/" element={<App />} >
-            </Route>
+            <Route path="/" element={<App pageTitle="Dashboard" />} />
         </Routes>
-    </Router>
+    </Router>)
 };
 
 export default RoutedApp;

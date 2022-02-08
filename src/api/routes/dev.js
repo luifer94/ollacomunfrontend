@@ -1,0 +1,1 @@
+export const PLACES_DEV = "/api/places";

@@ -1,67 +1,61 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import HomePage from "./modules/home/HomePage";
+import HomePage from "./components/home/HomePage";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 
-export default class App extends React.Component {
-  state = {
-    showRegisterOlla: false,
+const App = () => {
+  const [showRegisterOlla, setShowRegisterOlla] = useState(false);
+
+  const togglePopup = () => {
+    setShowRegisterOlla(!showRegisterOlla);
   };
 
-  togglePopup = () => {
-    const { showRegisterOlla } = this.state;
-    this.setState({
-      showRegisterOlla: !showRegisterOlla,
-    });
-  };
-
-  renderHomePage = (props) => {
+  const renderHomePage = (props) => {
     return (
       <HomePage
         {...props}
-        showRegisterOlla={this.state.showRegisterOlla}
-        togglePopup={this.togglePopup}
+        showRegisterOlla={showRegisterOlla}
+        togglePopup={togglePopup}
       />
     );
   };
 
-  render() {
-    return (
-      <div>
-        <Navbar bg="light" variant="light" style={{ color: "green" }}>
-          <Container>
-            <Navbar.Brand>
-              <Link style={{ color: "green" }} to={"/"}>
-                {" "}
-                ¡Apoyemos a nuestra gente!{" "}
-              </Link>
-            </Navbar.Brand>
-            <Nav className="mr-auto"></Nav>
-            <Button
-              variant="outline-primary"
-              style={{ color: "green", borderColor: "green" }}
-              className="btn-hover"
-              showRegisterOlla={this.state.showRegisterOlla}
-            >
+  return (
+    <div>
+      <Navbar bg="light" variant="light" style={{ color: "green" }}>
+        <Container>
+          <Navbar.Brand>
+            <Link style={{ color: "green" }} to={"/"}>
               {" "}
-              <a
-                style={{ color: "green" }}
-                rel="noopener"
-                target="_blank"
-                href="https://forms.gle/Qj1m4XVAL37winH99"
-              >
-                Registrar olla común
-              </a>
-            </Button>
-          </Container>
-        </Navbar>
+              ¡Apoyemos a nuestra gente!{" "}
+            </Link>
+          </Navbar.Brand>
+          <Nav className="mr-auto"></Nav>
+          <Button
+            variant="outline-primary"
+            style={{ color: "green", borderColor: "green" }}
+            className="btn-hover"
+            showRegisterOlla={showRegisterOlla}
+          >
+            {" "}
+            <a
+              style={{ color: "green" }}
+              rel="noopener"
+              target="_blank"
+              href="https://forms.gle/Qj1m4XVAL37winH99"
+            >
+              Registrar olla común
+            </a>
+          </Button>
+        </Container>
+      </Navbar>
 
-        {this.renderHomePage()}
-      </div>
-    );
-  }
-}
+      {renderHomePage()}
+    </div>
+  );
+};
+export default App;

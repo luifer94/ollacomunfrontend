@@ -2,7 +2,6 @@
   "name": "frontend-ollacommun",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:8000/",
   "dependencies": {
     "axios": "^0.25.0",
     "bootstrap": "^5.1.3",
@@ -34,5 +33,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "miragejs": "0.1.43"
   }
 }
