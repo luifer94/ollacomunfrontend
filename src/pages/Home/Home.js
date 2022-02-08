@@ -1,29 +1,13 @@
-import "./App.css";
+import styles from "./Home.module.scss";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import HomePage from "./components/home/HomePage";
+import Map from "../../components/home/Map";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 
-const App = () => {
-  const [showRegisterOlla, setShowRegisterOlla] = useState(false);
-
-  const togglePopup = () => {
-    setShowRegisterOlla(!showRegisterOlla);
-  };
-
-  const renderHomePage = (props) => {
-    return (
-      <HomePage
-        {...props}
-        showRegisterOlla={showRegisterOlla}
-        togglePopup={togglePopup}
-      />
-    );
-  };
-
+const Home = () => {
   return (
     <div>
       <Navbar bg="light" variant="light" style={{ color: "green" }}>
@@ -39,7 +23,6 @@ const App = () => {
             variant="outline-primary"
             style={{ color: "green", borderColor: "green" }}
             className="btn-hover"
-            showRegisterOlla={showRegisterOlla}
           >
             {" "}
             <a
@@ -53,9 +36,8 @@ const App = () => {
           </Button>
         </Container>
       </Navbar>
-
-      {renderHomePage()}
+      <Map/>
     </div>
   );
 };
-export default App;
+export default Home;
