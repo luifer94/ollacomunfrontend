@@ -1,7 +1,9 @@
 import styles from "./Home.module.scss";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Map from "../../components/home/Map";
+
+
+import Map from "../../components/Map/Map";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";

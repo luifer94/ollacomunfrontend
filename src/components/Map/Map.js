@@ -5,7 +5,7 @@ import MarkerInfo from "../MarkerInfo/MarkerInfo";
 import { MAP_CENTER, MAP_ZOOM, MAP_HEIGHT } from "./constants";
 import { stylesDefault } from "./styles";
 
-import { getPlaces } from "../../../api/places";
+import { getPlaces } from "../../api/places";
 
 const HomePage = () => {
   const [places, setPlaces] = useState([]);
