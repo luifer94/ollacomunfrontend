@@ -1,13 +1,13 @@
 import axios from "axios";
 
-import isDev from "../utils/DevDetect";
+import isProd from "../utils/DevDetect";
 
 export const parserResponse = async (
   response,
   parserTest,
   parserProduction
 ) => {
-  if (isDev()) {
+  if (!isProd()) {
     return await parserTest(response);
   } else {
     return await parserProduction(response);

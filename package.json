@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.25.0",
+    "axios": "0.25.0",
     "bootstrap": "^5.1.3",
     "pigeon-maps": "0.20.0",
     "pigeon-marker": "0.3.4",
@@ -36,6 +36,12 @@
     ]
   },
   "devDependencies": {
-    "miragejs": "0.1.43"
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@testing-library/react": "12.1.2",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "miragejs": "0.1.43",
+    "react-test-renderer": "^17.0.2"
   }
 }
