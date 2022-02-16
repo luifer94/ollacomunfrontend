@@ -33,22 +33,19 @@ const CustomMap = () => {
   
   return (
     <div style={stylesDefault.container}>
-      <p>DATA!</p>
       <Map center={MAP_CENTER} zoom={MAP_ZOOM} height={MAP_HEIGHT}>
         {places.map((place) => {
           return (
-            <div key={place.id} data-testid="place">
-              <Marker
-                width={60}
-                key={place.id}
-                anchor={[
-                  parseFloat(place.latitude),
-                  parseFloat(place.longitude),
-                ]}
-                payload={place}
-                onClick={onMarkerPressed}
-              />
-            </div>
+            <Marker
+            width={60}
+            key={place.id}
+            anchor={[
+              parseFloat(place.latitude),
+              parseFloat(place.longitude),
+            ]}
+            payload={place}
+            onClick={onMarkerPressed}
+          />
           );
         })}
       </Map>
