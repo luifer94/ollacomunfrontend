@@ -7,7 +7,7 @@ import { stylesDefault } from "./styles";
 
 import { getPlaces } from "../../api/places";
 
-const HomePage = () => {
+const CustomMap = () => {
   const [places, setPlaces] = useState([]);
   const [markerPressed, setMarkerPressed] = useState(null);
 
@@ -30,31 +30,34 @@ const HomePage = () => {
   const onCloseMarkerPressed = () => {
     setMarkerPressed(null);
   };
-
+  
   return (
     <div style={stylesDefault.container}>
+      <p>DATA!</p>
       <Map center={MAP_CENTER} zoom={MAP_ZOOM} height={MAP_HEIGHT}>
         {places.map((place) => {
           return (
-            <Marker
-              width={60}
-              key={place.id}
-              anchor={[parseFloat(place.latitude), parseFloat(place.longitude)]}
-              payload={place}
-              onClick={onMarkerPressed}
-            />
+            <div key={place.id} data-testid="place">
+              <Marker
+                width={60}
+                key={place.id}
+                anchor={[
+                  parseFloat(place.latitude),
+                  parseFloat(place.longitude),
+                ]}
+                payload={place}
+                onClick={onMarkerPressed}
+              />
+            </div>
           );
         })}
       </Map>
 
       {markerPressed ? (
-        <MarkerInfo
-          place={markerPressed}
-          closePopup={onCloseMarkerPressed}
-        />
+        <MarkerInfo place={markerPressed} closePopup={onCloseMarkerPressed} />
       ) : null}
     </div>
   );
 };
 
-export default HomePage;
+export default CustomMap;
